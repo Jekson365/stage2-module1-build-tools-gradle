@@ -1,12 +1,7 @@
-package com.epam.utils;
-
 public class StringUtils {
     public static boolean isPositiveNumber(String str) {
-         if (Integer.valueOf(str) > 0) {
-             return true;
-         }
-         else {
-             return false;
-         }
+        // Magic will happen here using Apache Commons Lang 3.10 library
+        // For example:
+        return org.apache.commons.lang3.StringUtils.isNumeric(str) && Double.parseDouble(str) > 0;
     }
 }
